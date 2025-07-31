@@ -137,6 +137,20 @@
             overflow: hidden;
         }
 
+        .sublabel {
+            display: block;
+            margin-bottom: 10px;
+            padding: 3px;
+            font-weight: 600;
+            color: black;
+            border-radius: 6px;
+            font-size: 16px;
+            text-align: center;
+            /* 中央揃え */
+            position: relative;
+            overflow: hidden;
+        }
+
         input[type="text"],
         input[type="tel"],
         textarea {
@@ -543,23 +557,82 @@
         <h1>健吉堂接骨院<br>アンケートフォーム</h1>
         <div class="info-text">以下全て入力後【アンケート送信】ボタンを押してください。</div>
 
-        <div class="label"><span class="required">必須</span>お名前を教えてください。</div>
+        <div class="label">お名前を教えてください（任意）</div>
         <textarea id="message" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
-        <div class="label"><span class="required">必須</span>受けたことがあるメニューを教えてください。</div>
+        <div class="label"><span class="required">必須</span>今までに受けたことのあるメニューは？（複数選択可）</div>
+        <div class="one-buttons">
+            <button type="button" class="one" onclick="selectone(this)">全身骨格筋調整</button>
+            <button type="button" class="one" onclick="selectone(this)">眼精疲労</button>
+            <button type="button" class="one" onclick="selectone(this)">小顔矯正</button>
+            <button type="button" class="one" onclick="selectone(this)">カッピング</button>
+            <button type="button" class="one" onclick="selectone(this)">マトリクスウェーブ（EMS/美容含む）</button>
+            <button type="button" class="one" onclick="selectone(this)">交通事故施術</button>
+            <button type="button" class="one" onclick="selectone(this)">その他／忘れた</button>
+        </div>
+        <div class="sublabel">【セルフホワイトニング】</div>
+        <div class="one-buttons">
+            <button type="button" class="one" onclick="selectone(this)">スタンダード施術（1回4500円）</button>
+            <button type="button" class="one" onclick="selectone(this)">プレミアム施術（1回5000円）</button>
+        </div>
+
+        <div class="label"><span class="required">必須</span>興味があるメニューや試してみたいものは？（複数選択可）</div>
+        <div class="two-buttons">
+            <button type="button" class="two" onclick="selecttwo(this)">全身骨格筋調整</button>
+            <button type="button" class="two" onclick="selecttwo(this)">眼精疲労</button>
+            <button type="button" class="two" onclick="selecttwo(this)">小顔矯正</button>
+            <button type="button" class="two" onclick="selecttwo(this)">カッピング</button>
+            <button type="button" class="two" onclick="selecttwo(this)">マトリクスウェーブ（EMS/美容含む）</button>
+            <button type="button" class="two" onclick="selecttwo(this)">交通事故施術</button>
+            <button type="button" class="two" onclick="selecttwo(this)">その他／忘れた</button>
+        </div>
+        <div class="sublabel">【セルフホワイトニング】</div>
+        <div class="two-buttons">
+            <button type="button" class="two" onclick="selecttwo(this)">スタンダード施術（1回4500円）</button>
+            <button type="button" class="two" onclick="selecttwo(this)">プレミアム施術（1回5000円）</button>
+        </div>>
+
+        <div class="label"><span class="required">必須</span>来院しやすい曜日・時間帯は？（複数選択可）</div>
+        <div class="three-buttons">
+            <button type="button" class="three" onclick="selectthree(this)">平日午前</button>
+            <button type="button" class="three" onclick="selectthree(this)">平日午後</button>
+            <button type="button" class="three" onclick="selectthree(this)">平日夜（18時以降）</button>
+            <button type="button" class="three" onclick="selectthree(this)">土曜</button>
+            <button type="button" class="three" onclick="selectthree(this)">日曜</button>
+            <button type="button" class="three" onclick="selectthree(this)">いつでも可</button>
+        </div>
+
+        <div class="label">今後あったら嬉しいサービス・ご要望があれば教えてください（任意・自由記述）</div>     
         <textarea id="message2" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
-        <div class="label"><span class="required">必須</span>興味のあるメニューを教えてください。</div>
-        <textarea id="message3" rows="1" placeholder="何もなければ「なし」と記載してください。"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label">性別を教えてください。（任意）</div>
+        <div class="four-buttons">
+            <button type="button" class="four" onclick="selectfour(this)">男性</button>
+            <button type="button" class="four" onclick="selectfour(this)">女性</button>
+            <button type="button" class="four" onclick="selectfour(this)">その他</button>
+        </div>
 
-        <div class="label"><span class="required">必須</span>その他要望があればお書きください。</div>
-        <textarea id="message4" rows="1" placeholder="何もなければ「なし」と記載してください。"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label">年代を教えてください。（任意）</div>
+        <div class="five-buttons">
+            <button type="button" class="five" onclick="selectfive(this)">10代</button>
+            <button type="button" class="five" onclick="selectfive(this)">20代</button>
+            <button type="button" class="five" onclick="selectfive(this)">30代</button>
+            <button type="button" class="five" onclick="selectfive(this)">40代</button>
+            <button type="button" class="five" onclick="selectfive(this)">50代</button>
+            <button type="button" class="five" onclick="selectfive(this)">60代以上</button>
+        </div>
+
 
         <button class="submit-button" onclick="submitForm()" div id="section-message">送信</button>
     <!-------------------------------------------------->
 
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script> <!-- LIFF SDKの読み込み -->
     <script>
+        let oneCount = '';
+        let twoCount = '';
+        let threeCount = '';
+        let fourCount = '';
+        let fiveCount = '';
 
         // LIFF初期化
         document.addEventListener('DOMContentLoaded', function () {
@@ -587,48 +660,104 @@
             }
         }
 
+        function selectone(element) {
+            // すでに active クラスが付いていれば外し、付いていなければ追加する（トグル）
+            element.classList.toggle('active');
+
+            // 選択されているすべてのボタンのテキストを取得して配列にする
+            const activeButtons = document.querySelectorAll('.one-buttons button.active');
+            const selectedones = Array.from(activeButtons).map(button => button.innerText);
+
+            // 必要に応じて選択された内容を格納
+            oneCount = selectedones;  // 配列として保持
+        }
+
+        function selecttwo(element) {
+            // すでに active クラスが付いていれば外し、付いていなければ追加する（トグル）
+            element.classList.toggle('active');
+
+            // 選択されているすべてのボタンのテキストを取得して配列にする
+            const activeButtons = document.querySelectorAll('.two-buttons button.active');
+            const selectedtwos = Array.from(activeButtons).map(button => button.innerText);
+
+            // 必要に応じて選択された内容を格納
+            twoCount = selectedtwos;  // 配列として保持
+        }
+
+        function selectthree(element) {
+            // すでに active クラスが付いていれば外し、付いていなければ追加する（トグル）
+            element.classList.toggle('active');
+
+            // 選択されているすべてのボタンのテキストを取得して配列にする
+            const activeButtons = document.querySelectorAll('.three-buttons button.active');
+            const selectedthrees = Array.from(activeButtons).map(button => button.innerText);
+
+            // 必要に応じて選択された内容を格納
+            threeCount = selectedthrees;  // 配列として保持
+        }
+
+        function selectfour(element) {
+            // 単一選択項目の処理コード
+            const buttons = document.querySelectorAll('.four-buttons button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // 選択されたボタンだけにactiveクラスを追加
+            element.classList.add('active');
+            fourCount = element.innerText;
+        }
+
+        function selectfive(element) {
+            // 単一選択項目の処理コード
+            const buttons = document.querySelectorAll('.five-buttons button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // 選択されたボタンだけにactiveクラスを追加
+            element.classList.add('active');
+            fiveCount = element.innerText;
+        }
+
         //見た目変更した際に不要な物は消す！
         function submitForm() {
             const message = document.getElementById('message').value;
             const message2 = document.getElementById('message2').value;
-            const message3 = document.getElementById('message3').value;
-            const message4 = document.getElementById('message4').value;
-
-
+            oneCount: oneCount;
+            twoCount: twoCount;
+            threeCount: threeCount;
+            fourCount: fourCount;
+            fiveCount: fiveCount;
+            
             const formData = {
                 message,
                 message2,
-                message3,
-                message4,
+                oneCount,
+                twoCount,
+                threeCount,
+                fourCount,
+                fiveCount,
             };
 
             // フォームデータのチェック
-            if (!formData.message) {
-                alert('お名前を入力してください。');
+            if (!formData.oneCount) {
+                alert('今までに受けたことのあるメニューをご選択ください。');
                 return;
             }
 
             // フォームデータのチェック
-            if (!formData.message2) {
-                alert('受けたことがあるメニューを入力してください。');
+            if (!formData.twoCount) {
+                alert('興味があるメニューや試してみたいものをご選択ください。');
                 return;
             }
 
-            if (!formData.message3) {
-                alert('興味のあるメニューを入力してください。');
-                return;
-            }
-            
             // フォームデータのチェック
-            if (!formData.message4) {
-                alert('その他要望を入力してください。');
+            if (!formData.threeCount) {
+                alert('来院しやすい曜日・時間帯をご選択ください。');
                 return;
             }
 
             // LINEトークにメッセージを送信
             liff.sendMessages([{
                 type: 'text',
-                text: `≪アンケート≫\n【お名前】\n・${formData.message}\n\n【受けたことがあるメニュー】\n・${formData.message2}\n\n【興味のあるメニュー】\n・${formData.message3}\n\n【その他要望】\n・${formData.message4}`
+                text: `≪アンケート≫\n【お名前】\n・${formData.message}\n\n【今までに受けたことがあるメニュー】\n・${formData.oneCount}\n\n【興味のあるメニューや試してみたいもの】\n・${formData.twoCount}\n\n【来院しやすい曜日・時間帯】\n・${formData.threeCount}\n\n【今後あったら嬉しいサービス・ご要望】\n・${formData.message2}\n\n【性別】\n・${formData.fourCount}\n\n【年代】\n・${formData.fiveCount}`
             }]).then(() => {
                 /* メッセージ送信成功時の処理 */
                 alert('ご記入ありがとうございます。');
