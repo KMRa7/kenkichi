@@ -602,7 +602,7 @@
             <button type="button" class="three" onclick="selectthree(this)">いつでも可</button>
         </div>
 
-        <div class="label">今後あったら嬉しいサービス・ご要望があれば教えてください（任意・自由記述）</div>     
+        <div class="label"><span class="required">必須</span>今後あったら嬉しいサービス・ご要望があれば教えてください（何もなければなしと記載してください）</div>
         <textarea id="message2" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
         <div class="label">性別を教えてください。（任意）</div>
@@ -751,6 +751,12 @@
             // フォームデータのチェック
             if (!formData.threeCount) {
                 alert('来院しやすい曜日・時間帯をご選択ください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.message2) {
+                alert('今後あったら嬉しいサービス・ご要望を入力してください。');
                 return;
             }
 
